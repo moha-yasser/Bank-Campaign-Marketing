@@ -60,3 +60,28 @@ After hyperparameter tuning and feature selection, both the Gradient Boosting an
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Gradient Boosting** | 73.57% | 72.97% | 0.13 | **0.53** | 0.21 |
 | **LightGBM** | **75.22%** | **74.89%** | **0.14** | 0.51 | 0.21 |
+
+While LightGBM achieved higher overall accuracy, Gradient Boosting was selected as the preferred model for identifying potential subscribers due to its superior Recall (0.53), which minimizes the number of missed opportunities in the marketing campaign.
+
+### Detailed Classification Reports
+
+- Gradient Boosting
+```bash
+precision    recall  f1-score   support
+
+           0       0.96      0.74      0.84      6528
+           1       0.13      0.53      0.21       468
+
+    accuracy                           0.73      6996
+```
+
+- LightGBM
+```bash
+precision    recall  f1-score   support
+
+           0       0.96      0.77      0.85      6528
+           1       0.14      0.51      0.21       468
+
+    accuracy                           0.75      6996
+```
+
