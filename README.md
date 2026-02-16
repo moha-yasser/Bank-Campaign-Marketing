@@ -56,8 +56,7 @@ Optimization: Applied the same permutation importance logic to refine the featur
 ## 📊 Final Model Comparison
 After hyperparameter tuning and feature selection, both the Gradient Boosting and LightGBM models were evaluated. Because the dataset is heavily imbalanced, I focused on the Recall and F1-Score for the minority class (subscribers) to measure success.
 
-``` bash
-Model,Train Accuracy,Test Accuracy,Precision (Yes),Recall (Yes),F1-Score (Yes)
-Gradient Boosting,73.57%,72.97%,0.13,0.53,0.21
-LightGBM,75.22%,74.89%,0.14,0.51,0.21
-```
+| Model | Train Accuracy | Test Accuracy | Precision (Yes) | Recall (Yes) | F1-Score (Yes) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Gradient Boosting** | 73.57% | 72.97% | 0.13 | **0.53** | 0.21 |
+| **LightGBM** | **75.22%** | **74.89%** | **0.14** | 0.51 | 0.21 |
