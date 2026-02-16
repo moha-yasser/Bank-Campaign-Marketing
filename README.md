@@ -85,3 +85,18 @@ precision    recall  f1-score   support
     accuracy                           0.75      6996
 ```
 
+## 📁 Project Structure
+
+```bash
+├── data/
+│   ├── raw/
+│   │   └── bank_marketing.csv                 # Original, unedited Kaggle data
+│   └── processed/
+│       └── bank_marketing_cleaned.csv         # Post-SQL cleaning & feature engineering
+├── sql/
+│   └── bank_marketing_etl.sql                 # MySQL cleaning & engineering script
+├── notebooks/
+│   └── bank_marketing_ml_pipeline.py          # Python pipeline, tuning, & evaluation
+├── README.md                                  # Documentation
+```
+
