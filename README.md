@@ -37,12 +37,12 @@ I engineered several composite features to provide stronger signals for the mode
 ## 🐍 Phase 2: Python Modeling (VS Code)
 The modeling phase focused on reproducibility and addressing the significant class imbalance in the target variable.
 
-## ⚖️ Handling Imbalanced Data
+### ⚖️ Handling Imbalanced Data
 The target variable was highly imbalanced (32,717 'No' vs 2,262 'Yes'). To ensure the model learned to identify the minority class effectively:
 - Class Weights: Utilized class_weight='balanced' in the models to penalize misclassifications of the minority class more heavily.
 - Scoring Metric: Used F1-Score as the primary metric for permutation_importance to ensure feature selection favored a balance between Precision and Recall rather than simple Accuracy.
 
-## 🤖 Machine Learning Pipelines
+### 🤖 Machine Learning Pipelines
 I built two separate pipelines to automate preprocessing and prevent data leakage:
 
 1. Gradient Boosting (pipe_gb)
