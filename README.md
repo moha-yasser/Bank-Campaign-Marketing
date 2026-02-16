@@ -45,15 +45,19 @@ The target variable was highly imbalanced (32,717 'No' vs 2,262 'Yes'). To ensur
 ### 🤖 Machine Learning Pipelines
 I built two separate pipelines to automate preprocessing and prevent data leakage:
 
-1. Gradient Boosting (pipe_gb)
+- Gradient Boosting (pipe_gb)
 Stages: One-Hot Encoding for temporal features (month, day_of_week) followed by the Gradient Boosting classifier.
 Optimization: Used permutation_importance to isolate a specific list of important_features and re-fitted the model for better generalization.
 
-2. LightGBM (pipe_lgb)
+- LightGBM (pipe_lgb)
 Categorical Handling: Leveraged LightGBM's native capability to process categorical features. I converted the relevant columns to the category Dtype in a loop before training.
 Optimization: Applied the same permutation importance logic to refine the feature set and re-fitted the model.
 
-📊 Summary of Results
-Integrated Workflow: Successfully connected VS Code to MySQL via SQLAlchemy to stream engineered features into the ML pipeline.
+## 📊 Final Model Comparison
+After hyperparameter tuning and feature selection, both the Gradient Boosting and LightGBM models were evaluated. Because the dataset is heavily imbalanced, I focused on the Recall and F1-Score for the minority class (subscribers) to measure success.
 
-Feature Importance: By using permutation importance with an F1-scoring focus, I identified which variables (including the SQL-engineered composite features) truly drive term deposit subscriptions despite the class imbalance.
+``` bash
+Model,Train Accuracy,Test Accuracy,Precision (Yes),Recall (Yes),F1-Score (Yes)
+Gradient Boosting,73.57%,72.97%,0.13,0.53,0.21
+LightGBM,75.22%,74.89%,0.14,0.51,0.21
+```
