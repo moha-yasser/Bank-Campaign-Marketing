@@ -42,6 +42,8 @@ The target variable was highly imbalanced (32,717 'No' vs 2,262 'Yes'). To ensur
 - Class Weights: Utilized class_weight='balanced' in the models to penalize misclassifications of the minority class more heavily.
 - Scoring Metric: Used F1-Score as the primary metric for permutation_importance to ensure feature selection favored a balance between Precision and Recall rather than simple Accuracy.
 
+- Target Encoding: Utilized Label Encoder on the target variable 'y', fitting the encoder on the training set and transforming the test set to maintain strict evaluation standards.
+
 ### 🤖 Machine Learning Pipelines
 I built two separate pipelines to automate preprocessing and prevent data leakage:
 
